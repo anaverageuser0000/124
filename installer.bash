@@ -1,7 +1,7 @@
 #
 #
-printf "\nPress y to confirm.\n"
 
+printf "\nPress y to confirm.\n"
 read -sN1 OUTPUT
 
 echo $OUTPUT
