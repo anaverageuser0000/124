@@ -6,5 +6,7 @@ read -sN1 OUTPUT
 if [[ $OUTPUT == "y" ]]; then
     printf "$OUTPUT"
 else
-    printf "\nNah\n"
+    printf "\nNah"
 fi
+
+printf "\n"
