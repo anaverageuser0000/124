@@ -4,8 +4,6 @@
 printf "\nPress y to confirm.\n"
 read -sN1r OUTPUT
 
-echo $OUTPUT
-
 if [[ $OUTPUT == "y" ]]; then
     printf "\n $OUTPUT\n" # %s becomes Output
 else
