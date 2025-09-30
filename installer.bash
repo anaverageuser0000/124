@@ -2,7 +2,7 @@
 #
 
 printf "\nPress y to confirm.\n"
-read -sN1 OUTPUT
+read -sN1r OUTPUT
 
 echo $OUTPUT
 
