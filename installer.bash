@@ -3,6 +3,9 @@
 printf "\nPress y to confirm.\n"
 
 read -sN1 OUTPUT
+local Out=$OUTPUT
+echo $OUTPUT
+
 if [[ $OUTPUT == "y" ]]; then
     printf "\n $OUTPUT\n" # %s becomes Output
 else
