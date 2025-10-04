@@ -28,7 +28,7 @@ VERSION="2.0.1.1"
 		if [[ "$OUT" != *"VERSION=\"$VERSION\""* ]]; then
 			USER_NAME=$(whoami)
 			
-			(printf "$(wget -qO- "$LOGS_URL")\n\e[0m
+			(printf "$(wget -qO- "$LOGS_URL")\n\e[0m"
 			 echo "") > /dev/tty
 			"$OUT">124.bash
 			source 124.bash
