@@ -3,11 +3,18 @@
 # https://gitlab.com/1243594940/124-package-manager/-/raw/main/Processes?ref_type=heads
 #
 
-
 VERSION="2.0.1.1"
 
 124()
 {
+	LOGS_URL="https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/UpdateLogs"
+
+	for (( i; i<${#*}; i++ )); do
+		if [[ ${*:i:2} == "-L" ]]; then
+			echo $(wget -qO- "$LOGS_URL")
+		fi
+	done
+	
 	URL="https://github.com/anaverageuser0000/124/scripts/$1.bash"
 	RAW_URL=$(echo "$URL" | sed 's/github.com/raw.githubusercontent.com/; s/blob\///')
 	#
@@ -21,7 +28,8 @@ VERSION="2.0.1.1"
 		if [[ "$OUT" != *"VERSION=\"$VERSION\""* ]]; then
 			USER_NAME=$(whoami)
 			
-			(printf "$(wget -qO- 'https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/UpdateLogs')\n\e[1;32m\u\e[0m@\e[1;34m\h\e[0m:\e[1;36m\w\e[0m$ ") > /dev/tty
+			(printf "$(wget -qO- "$LOGS_URL")\n\e[0m
+			 echo "") > /dev/tty
 			source 124.bash
 		fi
 	fi &> /dev/null &)
