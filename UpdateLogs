@@ -1,5 +1,8 @@
 \e[0;1m
-Update 2.0.1:
+Updates for Version 2.0
+2.0.1:
 Added automatic updating
-Rewrote the entire script\
+Rewrote the entire script
+2.0.1.1:
+Improved output to hide.\
 \e[0m
