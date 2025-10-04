@@ -13,13 +13,14 @@ VERSION=2.0.1
 		OUT=$(wget -qO- "$RAW_URL")
 		(bash <<< "$OUT")
 	fi
-
-	if wget --spider --quiet "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124"; then
+	set +m
+	(if wget --spider --quiet "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124"; then
 		OUT=$(wget -qO- "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124")
 		if [[ "$OUT" != *"VERSION=$VERSION"* ]]; then
 			printf $(wget -qO- "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/UpdateLogs")
 			echo "$OUT">124.bash
 			source 124.bash
 		fi
-	fi &
+	fi &> /dev/null &)
+	set -m
 }
