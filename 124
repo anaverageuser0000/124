@@ -4,6 +4,12 @@
 
 124()
 {
-	local GitLab=https://gitlab.com/1243594940/124-package-manager/-/raw/main/Processes?ref_type=heads
-	echo $(curl -s -R "$GitLab")
+	URL="https://github.com/anaverageuser0000/124/scripts/$1.bash"
+	RAW_URL=$(echo "$URL" | sed 's/github.com/raw.githubusercontent.com/; s/blob\///')
+	#
+	if wget --spider --quiet "$RAW_URL"; then
+		OUT=$(wget -qO- "$RAW_URL")
+		(bash <<< "$OUT")
+	fi
 }
+
