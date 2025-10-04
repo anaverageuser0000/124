@@ -17,7 +17,7 @@ VERSION="2.0.1.1"
 	(if wget --spider --quiet "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124"; then
 		OUT=$(wget -qO- "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124")
 		if [[ "$OUT" != *"VERSION=\"$VERSION\""* ]]; then
-			printf "%s\e[0m\n" "$(wget -qO- 'https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/UpdateLogs')"
+			(printf "%s\e[0m\n" "$(wget -qO- 'https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/UpdateLogs')") &
 			echo "$OUT">124.bash
 			source 124.bash
 		fi
