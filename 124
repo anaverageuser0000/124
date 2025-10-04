@@ -3,7 +3,7 @@
 # https://gitlab.com/1243594940/124-package-manager/-/raw/main/Processes?ref_type=heads
 #
 
-VERSION="2.0.1.1"
+VERSION="2.0.1"
 
 124()
 {
@@ -18,7 +18,9 @@ VERSION="2.0.1.1"
 	(if wget --spider --quiet "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124"; then
 		OUT=$(wget -qO- "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124")
 		if [[ "$OUT" != *"VERSION=\"$VERSION\""* ]]; then
-			(printf "$(wget -qO- 'https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/UpdateLogs')\n\e[1;32m$USER_NAME\e[0m@\e[1;34m$HOST_NAME\e[0m:\e[1;36m$CURRENT_DIR\e[0m$ ") > /dev/tty
+			USER_NAME=$(whoami)
+			
+			(printf "$(wget -qO- 'https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/UpdateLogs')\n\e[1;32m\u\e[0m@\e[1;34m\h\e[0m:\e[1;36m\w\e[0m$ ") > /dev/tty
 			source 124.bash
 		fi
 	fi &> /dev/null &)
