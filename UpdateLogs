@@ -4,5 +4,4 @@ Updates for Version 2.0
 Added automatic updating
 Rewrote the entire script
 2.0.1.1:
-Improved output to hide.\
-\e[0m
+Improved output to hide.\e[0m
