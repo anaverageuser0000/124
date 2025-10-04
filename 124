@@ -2,7 +2,9 @@
 #
 # https://gitlab.com/1243594940/124-package-manager/-/raw/main/Processes?ref_type=heads
 
-VERSION=2.0
+VERSION=2.1
+
+echo "TEST UPDATE"
 
 124()
 {
