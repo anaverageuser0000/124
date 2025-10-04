@@ -2,9 +2,7 @@
 #
 # https://gitlab.com/1243594940/124-package-manager/-/raw/main/Processes?ref_type=heads
 
-VERSION=2.2
-
-echo "Boo!"
+VERSION=2.0
 
 124()
 {
@@ -18,7 +16,7 @@ echo "Boo!"
 
 	if wget --spider --quiet "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124"; then
 		OUT=$(wget -qO- "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124")
-		if [[ "$OUT" != *"$VERSION"* ]]; then
+		if [[ "$OUT" != *"VERSION=$VERSION"* ]]; then
 			printf "Hello, world!"
 			echo "$OUT">124.bash
 			source 124.bash
