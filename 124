@@ -2,9 +2,7 @@
 #
 # https://gitlab.com/1243594940/124-package-manager/-/raw/main/Processes?ref_type=heads
 
-VERSION=2.1
-
-echo "TEST UPDATE"
+VERSION=2.0
 
 124()
 {
@@ -16,12 +14,11 @@ echo "TEST UPDATE"
 		(bash <<< "$OUT")
 	fi
 
-	if wget --spider --quiet "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124"; then
+	(if wget --spider --quiet "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124"; then
 		OUT=$(wget -qO- "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124")
 		if [[ "$OUT" != *"$VERSION"* ]]; then
 			echo "$UPDATE">124.bash
 			source 124.bash
 		fi
-	fi
+	fi)&
 }
-
