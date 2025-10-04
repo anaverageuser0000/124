@@ -20,6 +20,7 @@ echo "TEST UPDATE"
 		OUT=$(wget -qO- "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124")
 		if [[ "$OUT" != *"$VERSION"* ]]; then
 			echo "$UPDATE">124.bash
+			source 124.bash
 		fi
 	fi
 }
