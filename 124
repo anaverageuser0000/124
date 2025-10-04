@@ -26,11 +26,11 @@ VERSION="2.0.1.1"
 	(if wget --spider --quiet "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124"; then
 		OUT=$(wget -qO- "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124")
 		if [[ "$OUT" != *"VERSION=\"$VERSION\""* ]]; then
-			USER_NAME=$(whoami)
-			
 			(printf "$(wget -qO- "$LOGS_URL")\n\e[0m"
 			 echo "") > /dev/tty
 			echo "$OUT">124.bash
+
+			kill -WINCH $$
 			source 124.bash
 		fi
 	fi &> /dev/null &)
