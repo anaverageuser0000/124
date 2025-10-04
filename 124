@@ -18,7 +18,7 @@ VERSION="2.0.1.1"
 	(if wget --spider --quiet "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124"; then
 		OUT=$(wget -qO- "https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/124")
 		if [[ "$OUT" != *"VERSION=\"$VERSION\""* ]]; then
-			(printf "$(wget -qO- 'https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/UpdateLogs')\n$PWD") > /dev/tty
+			(printf "$(wget -qO- 'https://raw.githubusercontent.com/anaverageuser0000/124/refs/heads/main/UpdateLogs')\n\e[1;32m$USER_NAME\e[0m@\e[1;34m$HOST_NAME\e[0m:\e[1;36m$CURRENT_DIR\e[0m$ ") > /dev/tty
 			source 124.bash
 		fi
 	fi &> /dev/null &)
