@@ -1,0 +1,9 @@
+# VERSION 2.0
+#
+# https://gitlab.com/1243594940/124-package-manager/-/raw/main/Processes?ref_type=heads
+
+124()
+{
+	local GitLab=https://gitlab.com/1243594940/124-package-manager/-/raw/main/Processes?ref_type=heads
+	echo $(curl -s -R "$GitLab")
+}
